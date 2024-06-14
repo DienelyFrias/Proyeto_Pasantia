@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Donaciones</title>
+    <link rel="icon" type="image/png" href="./Img/icono.ico">
+    <link rel="stylesheet" href="./Css/FormDonaciones.css">
+</head>
+<div class="container">
+    <form id="donationForm" onsubmit="return validarFormulario(event);">
+        <div class="row">
+            <div class="column">
+                <h3 class="title">Datos Donante</h3>
+                <div class="input-box">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" placeholder="Dienely Frias" maxlength="50">
+                </div>
+                <div class="input-box">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="example@example.com" maxlength="60">
+                </div>
+                <div class="input-box">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" onkeyup="formatearTelefono(this);" placeholder="809 122 6733" maxlength="12">
+                </div>
+                <div class="input-box">
+                    <label for="pais">País</label>
+                    <select id="pais">
+                        <option value="Pais">País</option>
+                        <option>Argentina</option>
+                        <option>Brasil</option>
+                        <option>Colombia</option>
+                        <option>Estados Unidos</option>
+                        <option>Honduras</option>
+                        <option>México</option>
+                        <option>República Dominicana</option>
+                        <option>Venezuela</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label for="ciudad">Ciudad</label>
+                    <select id="ciudad">
+                        <option value="Ciudad">Ciudad</option>
+                        <option>Bogotá</option>
+                        <option>Buenos Aires</option>
+                        <option>Brasilia</option>
+                        <option>Caracas</option>
+                        <option>México DF</option>
+                        <option>Santo Domingo</option>
+                        <option>Tegucigalpa</option>
+                        <option>Washington DC</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label for="monto">Monto:</label>
+                    <input type="text" id="monto" onkeyup="moneda(this);" placeholder="$50">
+                </div>
+            </div>
+            <div class="column">
+                <h3 class="title">Depósito</h3>
+                <div class="input-box">
+                    <label for="tarjetas">Tarjetas válidas:</label>
+                    <img src="./Img/tarjetas.png" alt="Tarjetas Válidas">
+                </div>
+                <div class="input-box">
+                    <label for="titular">Nombre del Titular:</label>
+                    <input type="text" id="titular" placeholder="Sra. Dienely Frias" maxlength="50">
+                </div>
+                <div class="input-box">
+                    <label for="numero-tarjeta">Número de Tarjeta:</label>
+                    <input type="text" id="numero-tarjeta" onkeyup="formatearTarjeta(this);" placeholder="1111 2222 3333 4444" maxlength="16">
+                </div>
+                <div class="input-box">
+                    <label for="mes-expiracion">Mes Expiración:</label>
+                    <select id="mes-expiracion">
+                        <option value="Mes">Mes</option>
+                        <option value="01">Enero</option>
+                        <option value="02">Febrero</option>
+                        <option value="03">Marzo</option>
+                        <option value="04">Abril</option>
+                        <option value="05">Mayo</option>
+                        <option value="06">Junio</option>
+                        <option value="07">Julio</option>
+                        <option value="08">Agosto</option>
+                        <option value="09">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label for="ano-expiracion">Año Expiración:</label>
+                    <select id="ano-expiracion">
+                        <option value="Año">Año</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" maxlength="4" placeholder="1234">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn">Donar Ahora</button>
+    </form>
+
+    <div id="successMessage" style="display: none; margin-top: 10px; text-align: center;">
+        <h2>¡Gracias por tu donación!</h2><br>
+        <p>Tu generosidad hace una gran diferencia.</p><br>
+        <a href="./PaginaPrincipal.html" class="btn btn-volver">Volver a Inicio</a>
+    </div>
+</div>
+
+<script src="./JS/Validaciones.js"></script>
+</body>
+
+</html>
